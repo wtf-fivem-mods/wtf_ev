@@ -1,10 +1,6 @@
 local client = { storedCars = {} }
 DB = { Client = client }
 
-function client:hasAnyCarsStored(ped)
-    return self.storedCars[ped] ~= nil
-end
-
 function client:hasCarStored(ped, garage)
     if self.storedCars[ped] == nil then
         return false

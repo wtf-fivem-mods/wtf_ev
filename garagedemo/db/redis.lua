@@ -11,11 +11,6 @@ function redis.key(...)
     return "garagedemo:"..s
 end
 
-function redis:hasAnyCarsStored(ped)
-    local res = Redis.scan(0, 'MATCH', self.key(ped,'*'))
-    return #res > 1 and #res[2] > 0
-end
-
 function redis:hasCarStored(ped, garage)
     return 1 == Redis.exists(self.key(ped, garage.Name))
 end
